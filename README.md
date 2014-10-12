@@ -32,7 +32,8 @@ Creates an array excluding all values of the provided arrays using strict equali
 
 array (Array): The array to process.
 [values] (…Array): The arrays of values to exclude.
-Returns
+
+**Returns**
 
 (Array): Returns a new array of filtered values.
 
@@ -92,6 +93,23 @@ _.first(characters, 'blocked');
 _.pluck(_.first(characters, { 'employer': 'slate' }), 'name');
 // → ['barney', 'fred']
 
+_.intersection([array])
+-----------------------
+
+Creates an array of unique values present in all provided arrays using strict equality for comparisons, i.e. ===.
+
+**Arguments**
+
+[array] (…Array): The arrays to inspect.
+
+**Returns**
+
+(Array): Returns an array of shared values.
+
+**Example**
+
+_.intersection([1, 2, 3], [5, 2, 1, 4], [2, 1]);
+// → [1, 2]
 
 _.union([array])
 ----------------
