@@ -17,6 +17,11 @@ array (Array): The array to compact.
 
 (Array): Returns a new array of filtered values.
 
+**Example**
+
+_.compact([0, 1, false, 2, '', 3]);
+// → [1, 2, 3]
+
 
 _.first(array, [callback], [thisArg])
 -------------------------------------
@@ -40,4 +45,50 @@ array (Array): The array to query.
 **Returns**
 
 (*): Returns the first element(s) of array.
+
+**Example**
+
+_.first([1, 2, 3]);
+// → 1
+
+_.first([1, 2, 3], 2);
+// → [1, 2]
+
+_.first([1, 2, 3], function(num) {
+  return num < 3;
+});
+// → [1, 2]
+
+var characters = [
+  { 'name': 'barney',  'blocked': true,  'employer': 'slate' },
+  { 'name': 'fred',    'blocked': false, 'employer': 'slate' },
+  { 'name': 'pebbles', 'blocked': true,  'employer': 'na' }
+];
+
+// using "_.pluck" callback shorthand
+_.first(characters, 'blocked');
+// → [{ 'name': 'barney', 'blocked': true, 'employer': 'slate' }]
+
+// using "_.where" callback shorthand
+_.pluck(_.first(characters, { 'employer': 'slate' }), 'name');
+// → ['barney', 'fred']
+
+
+_.union([array])
+----------------
+
+Creates an array of unique values, in order, of the provided arrays using strict equality for comparisons, i.e. ===.
+
+**Arguments**
+
+[array] (…Array): The arrays to inspect.
+
+**Returns**
+
+(Array): Returns an array of combined values.
+
+**Example**
+
+_.union([1, 2, 3], [5, 2, 1, 4], [2, 1]);
+// → [1, 2, 3, 5, 4]
 
