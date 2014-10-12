@@ -1,4 +1,4 @@
 lunderdash
 ==========
 
-implementing Lo-Dash functionality
+Re-implements Lo-Dash functionality.
