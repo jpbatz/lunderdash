@@ -23,6 +23,25 @@ _.compact([0, 1, false, 2, '', 3]);
 // → [1, 2, 3]
 
 
+_.difference(array, [values])
+-----------------------------
+
+Creates an array excluding all values of the provided arrays using strict equality for comparisons, i.e. ===.
+
+**Arguments**
+
+array (Array): The array to process.
+[values] (…Array): The arrays of values to exclude.
+Returns
+
+(Array): Returns a new array of filtered values.
+
+**Example**
+
+_.difference([1, 2, 3, 4, 5], [5, 2, 10]);
+// → [1, 3, 4]
+
+
 _.first(array, [callback], [thisArg])
 -------------------------------------
 
