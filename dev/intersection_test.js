@@ -12,7 +12,7 @@ var result = [];
 // similar to Lo-Dash version
 function intersection() {
   
-  var result = [];                        // what if argument is not an array?
+  var result = [];                        // what if argument is not an array?  can use isArray() to test
 
   if(arguments.length === 0) {            // no arguments provided, return 0 
     result = 0;
