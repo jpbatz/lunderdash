@@ -2,8 +2,63 @@
 // put this code in here!
  
 module.exports = {
-  // compact: function(){},
-  // difference: function(){},
+  compact: function(array) {
+    if (array instanceof Array) {
+      var filteredArray = [];
+      var current;
+      for (var i = 0; i < array.length; i++) {
+        current = array[i];
+        if (isNaN(current)) {
+            continue;
+        }
+        switch(current) {
+          case 0:
+          case false:
+          case '':
+          case null:
+          case undefined:
+            continue;
+          default:
+            filteredArray.push(current);
+        }
+      }
+      return filteredArray;
+    } else {
+      return [];
+    }
+  },
+  difference: function(array, exclusions) {
+    if (array instanceof Array) {
+      if (exclusions instanceof Array) {
+        var excludeIndex;
+        var excludeValue;
+        for (var i = 0; i < exclusions.length; i++) {
+          excludeValue = exclusions[i];
+          do {
+            excludeIndex = array.indexOf(excludeValue);
+            if (excludeIndex > -1) {
+              array.splice(excludeIndex, 1);
+            }
+          } while (excludeIndex > -1);
+        } // end for
+      } // end if exclusions is an Array
+      return array;
+    } else { // array is not an Array
+      return [];
+    }
+  },
+  findIndex: function(array, callback) {
+
+  },
+  findLastIndex: function() {
+
+  },
+  first: function() {
+
+  },
+  flatten: function() {
+
+  },
   union: function() {
     var temp = [];
     console.log(arguments.length);
